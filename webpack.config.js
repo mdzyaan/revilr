@@ -1,9 +1,9 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
-module.exports = () =>  {
+module.exports = (env) =>  {
+    const isProduction = env === 'production';
     const CSSExtract = new ExtractTextPlugin('style.css');
-    const fontExtract = new ExtractTextPlugin('Facon.ttf');
     return {
         entry: './src/app.js',
         output: {
@@ -40,7 +40,7 @@ module.exports = () =>  {
         plugins: [
             CSSExtract
         ],
-        devtool: 'cheap-module-eval-source-map',
+        devtool:isProduction ? 'source-map' : 'cheap-module-eval-source-map',
         devServer: {
             contentBase: path.join(__dirname, 'public'),
             historyApiFallback: true,
