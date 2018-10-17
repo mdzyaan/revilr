@@ -22,13 +22,15 @@ export default class CardList extends React.Component {
                 }
             })
             .then(games => {
-                const gamesId = games.data[0].id;
-                const gamesDetail = games.data[0];
-                this.setState((prevState) => {
-                    return {
-                        gameList: prevState.gameList.concat(<Card addCn={"cardss__post-card"} key={gamesId} game={gamesDetail}/>)
-                    }
-                });
+                if (games.data[0].cover) {
+                    const gamesId = games.data[0].id;
+                    const gamesDetail = games.data[0];
+                    this.setState((prevState) => {
+                        return {
+                            gameList: prevState.gameList.concat(<Card addCn={"cardss__post-card"} key={gamesId} game={gamesDetail}/>)
+                        }
+                    });
+                }
             });
         });
     }
