@@ -1,0 +1,34 @@
+.button__wrapper {
+
+	&-btn {
+		padding: 1rem;
+		border: none;
+		color: $color-white;
+		text-transform: uppercase;
+		background-color: transparent;       	
+		display: block;
+		transition: all .3s;
+		z-index: 100;
+
+		&:hover {
+			opacity: 0.8;
+			transform: scale(1.1);
+
+			& .button__wrapper-line {
+				width: 7rem;
+			}
+		}
+	}
+
+	&-line {
+		width: 11rem;
+		border-radius: 2px;
+		height: .4rem;
+		background: linear-gradient(270deg, #ea5455, #f8d800, #28c76f, #0396ff);
+		background-size: 800% 800%;
+		animation: colorChange 30s linear infinite;
+		display: block;
+    											        
+	}
+}
+

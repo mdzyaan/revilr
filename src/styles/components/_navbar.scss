@@ -1,0 +1,187 @@
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba($color-black, 0.5);
+
+    &__hamburger {
+        font-size: 3rem;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+    &__logo {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 1rem 2rem 0.4rem;
+        border-radius: 1rem;
+        background: linear-gradient(270deg, #ea5455, #f8d800, #28c76f, #0396ff);
+        background-size: 800% 800%;
+        animation: colorChange 30s linear infinite;
+        transform: skewX(-15deg);
+
+        &-text {
+            font-family: 'Facon', sans-serif;
+            font-size: 3.2rem;
+            color: $color-white;
+            text-decoration: none;
+            transform: skewX(15deg);
+        }
+    }
+    &__search {
+        margin: .8rem 0;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        
+        &-icon{
+            color: $color-white;
+            font-size: 2rem;
+        }
+    }
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1500;
+    top: 0;
+    left: 0;
+    background-color: $color-black;
+    overflow-x: hidden;
+    transition: all 0.5s;
+    padding-top: 6rem;
+
+    a:hover {
+        opacity: 1;
+    }
+    &__line {
+        margin: 1rem auto;
+        width: 25%;
+        height: 2px;
+        display: block;
+        background: linear-gradient(270deg, #ea5455, #f8d800, #28c76f, #0396ff);
+        background-size: 800% 800%;
+        animation: colorChange 30s ease infinite;
+    }
+    &::-webkit-scrollbar {
+        width: 0.5rem;
+    }
+     
+    &::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    }
+     
+    &::-webkit-scrollbar-thumb {
+      background-color: #636161;
+      outline: 1px solid slategrey;
+    }
+    & .closebtn {
+        position: absolute;
+        top: 0;
+        right: 2.5rem;
+        font-size: 3.6rem;
+        margin-left: 5rem;
+    }
+    &__menu {
+        width: 90%;
+        margin: 0 auto;
+        padding: 0 .8rem 0 3.2rem;
+        list-style: none;
+        font-size: 1.6rem;      
+        &-item {
+            font-weight: bold;
+            opacity: .5;
+            margin-bottom: 1rem;
+            transition: all .3s;
+            &:hover {
+                opacity: 1;
+                transform: translateX(1rem);
+            }
+        }
+    }
+    &__quick {
+        width: 90%;
+        margin: 0 auto;
+        padding: 0 0.8rem 0 3.2rem;
+        list-style: none;
+        font-size: 1.6rem;        
+        &-title {
+            color: $color-white;
+            padding: .5rem;
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            letter-spacing: .3rem;
+        }
+        &-item {
+            opacity: .5;
+            padding: .5rem;
+            transition: all .3s;
+            &:hover {
+                opacity: 1;
+                transform: translateX(1rem);
+            }
+        }
+    }
+    &__genre {
+        width: 90%;
+        margin: 0 auto;
+        padding: 0 0.8rem 0 3.2rem;
+        list-style: none;
+        
+
+        &-title {
+            color: $color-white;
+            padding: .5rem;
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            letter-spacing: .3rem;
+        }
+        &-item {
+            opacity: .5;
+            padding: .5rem;
+            transition: all .3s;
+            &:hover {
+                opacity: 1;
+                transform: translateX(1rem);
+            }
+        }
+
+    }
+    & a {
+        
+        text-decoration: none;
+        font-size: 1.6rem;
+        color: rgba($color: $color-white, $alpha: 1);
+        display: block;
+        transition: 0.3s;
+    }
+}
+
+@media screen and (max-height: 450px) {
+    .nav {
+        position: relative;
+    }
+    .sidenav {
+      padding-top: 1.5rem;
+
+      a {font-size: 2rem;}
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .sidenav {
+      a {
+          font-size: 2rem;
+        }
+    }
+}

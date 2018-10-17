@@ -1,0 +1,30 @@
+
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+
+
+// default browser font size is 16px
+
+html {
+	// This defines what 1rem is
+	font-size: 62.5%;  // 1rem = 10px; 	10px/16px =62.5%;
+
+	@media (max-width: 500px) {
+		font-size: 45%; 
+	};
+}
+
+
+body {
+	font-family: 'Lato', sans-serif;
+	font-size: 1.6rem;
+	box-sizing: border-box;
+	padding: 0;
+	background-color: #000;
+	color: #fff;
+}

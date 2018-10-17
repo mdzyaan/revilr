@@ -1,0 +1,100 @@
+Setting up Environment
+-----------------
+1.  --> root
+        |__public/
+        |  |__index.html
+        |  |__script/
+        |     |__bundle.js
+        |__src/
+        |  |__app.js
+2. cmd "npm init"
+
+3. install dependencies
+    --> yarn global babel-cli@6.24.1
+    --> yarn add babel-preset-react@6.24.1 babel-preset-env@6.24.1
+    --> yarn add webpack@3.1.0
+    --> npm install webpack-dev-server@2.5.1 --save-dev
+    --> yarn add babel-core@6.25.0 babel-loader@7.1.1
+    --> yarn add babel-plugin-transform-class-properties@6.24.1
+    --> yarn add css-loader node-sass normalize.css sass-loader style-loader
+
+4. create webpack.config.js and add the following
+------------------------
+const path = require('path');
+module.exports = {
+    entry: './src/app.js',
+    output: {
+      path: path.join(__dirname, 'public'),
+      filename: 'bundle.js'
+    },
+    module: {
+      rules: [{
+        loader: 'babel-loader',
+        test: /\.js$/,
+        exclude: /node_modules/
+      },{
+          test: /\.s?css$/,
+          use: [
+              'style-loader',
+              'css-loader',
+              'sass-loader'
+          ]
+      }],
+    },
+    devtool: 'cheap-module-eval-source-map',
+    devServer: {
+        contentBase: path.join(__dirname, 'public'),
+    }
+}
+-------------------------
+
+5. create .babelrc file and the following:
+------------------
+{
+  "presets": [
+    "env",
+    "react"
+  ],
+  "plugins": [
+    "transform-class-properties"
+  ]
+}
+----------------------
+6. script to package.json
+---------------
+{
+    "script": {
+            "build": "webpack --watch",
+            "dev-server": "webpack-dev-server",
+            "build-babel": "babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch"
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+,{
+            test:/\.(png|svg|jp(e*)g|gif)$/,
+            exclude:/node_modules/,
+            use:[{
+                loader: "url-loader",
+                options: {
+                    name:'[name].[ext]',
+                    outputPath:'./public/images'
+                }
+            }]
+        }

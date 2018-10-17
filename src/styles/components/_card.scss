@@ -1,0 +1,84 @@
+.cards  {
+    width:  22rem;
+    height: 31rem;
+    position: relative;
+    margin: 1.6rem 1rem; 
+    transition: all .2s;
+    &:hover {
+        transform: scale(1.1);
+    }
+    & img {
+        width: 100%;
+        height: 100%;
+        background-position: 50% 50%;
+        background-repeat:   no-repeat;
+        background-size:     cover;
+        border-radius: 5px;
+    }
+    &__bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        opacity: 0;
+        &:hover {
+            opacity: 0.3;
+        }
+    }
+    &__icon-1 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        border: none;
+        background-color:transparent;
+
+        &1 {
+            font-size: 10rem;
+            opacity: 0.5;
+            color: #eee;
+            transition: all .2s;
+            z-index: 1;
+        }
+    }
+    &__icon-2 {
+        position: absolute;
+        top: 0;
+        right: 0;
+        border: none;
+        padding: 1rem;
+        transition: all .3s;
+        background-color:transparent;
+        &:hover, &:active {
+            outline: none;
+            transform: rotate(360deg);
+        }
+        &2 {
+            font-size: 2rem;
+            opacity: 1;
+            color: #eee;
+            transition: all .2s;
+            z-index: 1;
+            &:hover, &:active {
+                outline: none;
+            }
+        }
+    }
+    &__icon-3 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: none;
+        padding: 1rem;
+        &3 {
+            font-size: 1.5rem;
+            opacity: 1;
+            color: #eee;
+            transition: all .2s;
+            z-index: 1;
+        }
+    }
+}
+  
