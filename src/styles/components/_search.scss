@@ -9,31 +9,47 @@
 
 .search__input {
     margin-top: 5rem;
-
     background-color: $color-black;
-    height: 10rem;
+    height: 100%;
     width: 100%;
     padding: 3rem;
-    z-index: 1500;
+    position: relative;
 
 
     &-form {
-        text-align: center;
-        background-color: transparent;
+        background-color: $color-grey-dark-3;
         color: $color-white;
         font-size: 4rem;
         padding: 2rem;
         width: 100%;
-        border: 2px solid $color-white;
+        border: none;
         border-radius: 5px;
         &::placeholder {
             color: $color-white;
             opacity: 0.8;
         }
-
         &:active, &:visited,&:focus {
-            outline: none;
-            
+            outline: none;          
+        }
+    }
+    &-button {
+        position: absolute;
+        top: 50%;
+        right: 4rem;
+        transform: translateY(-50%);
+        border: none;
+        border-left: 1px solid white;
+        background-color: transparent;
+        color: white;
+        font-size: 3rem;
+        padding: 1.3rem;
+        opacity: 0.8;
+
+        &:hover {
+            opacity: 1;
+        }
+        &:active, &:visited,&:focus {
+            outline: none;          
         }
     }
     
@@ -56,8 +72,6 @@
 }
 @media screen and (max-height: 450px) {
     .search__container {
-        margin-top: 0;
-        
+        margin-top: 0;    
     }
-
 }

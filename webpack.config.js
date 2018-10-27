@@ -31,9 +31,27 @@ module.exports = (env) =>  {
                               options: {
                                 sourceMap: true
                               }
-                            }
+                            },
                         ]
                     })
+                },{
+                    test: /\.(png|jpg|jpeg)$/,
+                    use: [{
+                        loader: 'url-loader',
+                        options: { 
+                            limit: 10000, 
+                            name: 'images/[name].[ext]'
+                        } 
+                    }]
+                },{
+                    test: /\.(ttf|eot)$/,  
+                    use: [{
+                        loader: 'url-loader',
+                        options: { 
+                            limit: 10000, 
+                            name: 'fonts/[name].[ext]'
+                        } 
+                    }]
                 },
             ],
         },

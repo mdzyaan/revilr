@@ -1,0 +1,22 @@
+.video {
+	max-width: 80rem;
+    margin: 7rem auto 0 auto;
+	width: 100%;
+	position:relative;
+    &-iframe {
+        height:0px;
+        width:100%;
+        padding-top:56.25%; /* Relacion: 16/9 = 56.25% */
+        position:relative;
+
+        & iframe {
+            position:absolute;
+            height:100%;
+            width:100%;
+            top:0px;
+            left:0px;
+          }
+    }
+}
+
+

@@ -1,4 +1,9 @@
-
+@font-face {
+    font-family: "Facon";
+    src: url(/fonts/Facon.ttf) format("truetype");
+    font-weight: normal;
+    font-style: normal; 
+}
 .nav {
     display: flex;
     justify-content: space-between;
