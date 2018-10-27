@@ -3,7 +3,7 @@ import axios from 'axios';
 import { key, proxy } from '../config';
 import Card from './Card';
 import { Link } from 'react-router-dom';
-export default class CardList extends React.Component {
+export default class CardRow extends React.Component {
     constructor(props) {
         super(props);
         this.state = {

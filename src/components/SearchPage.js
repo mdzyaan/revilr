@@ -8,7 +8,7 @@ export default class SearchPage extends React.Component {
         super(props);
         this.state = {
             term: '',
-            gameList: ['loading'],
+            gameList: [<h1>loading...</h1>],
         }
     }
     onChange = (e) => {

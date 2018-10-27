@@ -24,7 +24,7 @@ export class Navbar extends React.Component {
                     <div className="sidenav__line"></div>
                     <ul className="sidenav__quick">
                         <h3 className="sidenav__quick-title">Quick Links</h3>
-                        <li className="sidenav__quick-item"><Link to="#">Home</Link></li>
+                        <li className="sidenav__quick-item"><Link to="/">Home</Link></li>
                         <li className="sidenav__quick-item"><Link to="#">Comming Soon</Link></li>
                         <li className="sidenav__quick-item"><Link to="#">Featured</Link></li>
                     </ul>

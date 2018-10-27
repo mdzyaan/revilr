@@ -1,7 +1,7 @@
 import React from 'react';
 import { proxy, key } from '../config';
 import axios from 'axios';
-import CardList from './CardList';
+import CardRow from './CardRow';
 
 
 export default class DetailPage extends React.Component {
@@ -13,6 +13,7 @@ export default class DetailPage extends React.Component {
             gameName: '',
             gameList: [],
             id: this.props.match.params.id,
+            steamId: 0,
             youtubeId: [],  
         }
         const location = props.location.pathname;
@@ -25,7 +26,7 @@ export default class DetailPage extends React.Component {
         this.setState(() => ({id: gamesId}));
     }
     componentDidMount() {
-        axios(`${proxy}https://api-endpoint.igdb.com/games/${this.state.id}?fields=id,name,cover,genres,rating,summary,videos,popularity`, {
+        axios(`${proxy}https://api-endpoint.igdb.com/games/${this.state.id}?fields=id,name,cover,genres,rating,summary,videos,popularity,external`, {
             method: "GET",
             headers: {
                 "user-key": `${key}`,
@@ -43,11 +44,12 @@ export default class DetailPage extends React.Component {
                 { 
                     game,
                     gameName: game.data[0].name,
-                    // gameList: [<CardList updateGameId={this.updateGameId}  name={"Recommended Games"} game={game.data[0].games} />],
+                    steamId: game.data[0].external.steam,
+                    // gameList: [<CardRow updateGameId={this.updateGameId}  name={"Recommended Games"} game={game.data[0].games} />],
                     youtubeId:  [
                         <iframe
                         key={videoTrailerId.video_id}
-                        src={`https://www.youtube.com/embed/${videoTrailerId.video_id}`} frameBorder="0"   allowFullScreen></iframe>
+                        src={`https://www.youtube.com/embed/${videoTrailerId.video_id}?autohide=1&showinfo=0`}  frameBorder="0"   allowFullScreen></iframe>
                         ]
                 }));
                 console.log(this.state);
@@ -66,6 +68,7 @@ export default class DetailPage extends React.Component {
                     </div>
                 </div>
                 <h1>{this.state.gameName}</h1>
+                <p>{this.state.steamId}</p>
             </div>
             
         );
