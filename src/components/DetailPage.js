@@ -13,7 +13,6 @@ export default class DetailPage extends React.Component {
             gameName: '',
             gameList: [],
             id: this.props.match.params.id,
-            steamId: 0,
             youtubeId: [],  
         }
         const location = props.location.pathname;
@@ -44,7 +43,6 @@ export default class DetailPage extends React.Component {
                 { 
                     game,
                     gameName: game.data[0].name,
-                    steamId: game.data[0].external.steam,
                     // gameList: [<CardRow updateGameId={this.updateGameId}  name={"Recommended Games"} game={game.data[0].games} />],
                     youtubeId:  [
                         <iframe
@@ -68,7 +66,6 @@ export default class DetailPage extends React.Component {
                     </div>
                 </div>
                 <h1>{this.state.gameName}</h1>
-                <p>{this.state.steamId}</p>
             </div>
             
         );

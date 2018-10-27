@@ -34,7 +34,7 @@ const NotFoundPage = () => (
           <div className="box__description-text">It seems like we couldn't find the page you were looking for</div>
       </div>
       
-      <Link to="/" target="_blank" className="box__button">Go Home</Link>
+        <Link to="/" target="_blank" className="box__button">Go Home</Link>
       
       </div>
       
