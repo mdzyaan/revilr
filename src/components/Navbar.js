@@ -31,26 +31,26 @@ export class Navbar extends React.Component {
                     <div className="sidenav__line"></div>
                     <ul className="sidenav__genre">
                         <h3 className="sidenav__genre-title">Genre</h3>
-                        <li className="sidenav__genre-item"><Link to="#1">Adventure</Link></li>
-                        <li className="sidenav__genre-item"><Link to="#2">Action</Link></li>
-                        <li className="sidenav__genre-item"><Link to="#4">Fighting</Link></li>
-                        <li className="sidenav__genre-item"><Link to="#25">Hack and slash</Link></li>
-                        <li className="sidenav__genre-item"><Link to="#32">Indie</Link></li>
-                        <li className="sidenav__genre-item"><Link to="#7">Music</Link></li>
-                        <li className="sidenav__genre-item"><Link to="#30">Pinball</Link></li>
-                        <li className="sidenav__genre-item"><Link to="#8">Platform</Link></li>
-                        <li className="sidenav__genre-item"><Link to="#2">Point-and-click</Link></li>
-                        <li className="sidenav__genre-item"><Link to="#9">Puzzle</Link></li>
-                        <li className="sidenav__genre-item"><Link to="#26">Quiz/Trivia</Link></li>
-                        <li className="sidenav__genre-item"><Link to="#10">Racing</Link></li>
-                        <li className="sidenav__genre-item"><Link to="#11">Real Time Strategy (RTS)</Link></li>
-                        <li className="sidenav__genre-item"><Link to="#12">Role-playing (RPG)</Link></li>
-                        <li className="sidenav__genre-item"><Link to="#5">Shooter</Link></li>
-                        <li className="sidenav__genre-item"><Link to="#13">Simulator</Link></li>
-                        <li className="sidenav__genre-item"><Link to="#14">Sport</Link></li>
-                        <li className="sidenav__genre-item"><Link to="#15">Strategy</Link></li>
-                        <li className="sidenav__genre-item"><Link to="#24">Tactical</Link></li>
-                        <li className="sidenav__genre-item"><Link to="#16">Turn-based strategy (TBS)</Link></li>
+                        <li className="sidenav__genre-item"><Link to="/genre/1">Adventure</Link></li>
+                        <li className="sidenav__genre-item"><Link to="/genre/2">Action</Link></li>
+                        <li className="sidenav__genre-item"><Link to="/genre/4">Fighting</Link></li>
+                        <li className="sidenav__genre-item"><Link to="/genre/25">Hack and slash</Link></li>
+                        <li className="sidenav__genre-item"><Link to="/genre/32">Indie</Link></li>
+                        <li className="sidenav__genre-item"><Link to="/genre/7">Music</Link></li>
+                        <li className="sidenav__genre-item"><Link to="/genre/30">Pinball</Link></li>
+                        <li className="sidenav__genre-item"><Link to="/genre/8">Platform</Link></li>
+                        <li className="sidenav__genre-item"><Link to="/genre/2">Point-and-click</Link></li>
+                        <li className="sidenav__genre-item"><Link to="/genre/9">Puzzle</Link></li>
+                        <li className="sidenav__genre-item"><Link to="/genre/26">Quiz/Trivia</Link></li>
+                        <li className="sidenav__genre-item"><Link to="/genre/10">Racing</Link></li>
+                        <li className="sidenav__genre-item"><Link to="/genre/11">Real Time Strategy (RTS)</Link></li>
+                        <li className="sidenav__genre-item"><Link to="/genre/12">Role-playing (RPG)</Link></li>
+                        <li className="sidenav__genre-item"><Link to="/genre/5">Shooter</Link></li>
+                        <li className="sidenav__genre-item"><Link to="/genre/13">Simulator</Link></li>
+                        <li className="sidenav__genre-item"><Link to="/genre/14">Sport</Link></li>
+                        <li className="sidenav__genre-item"><Link to="/genre/15">Strategy</Link></li>
+                        <li className="sidenav__genre-item"><Link to="/genre/24">Tactical</Link></li>
+                        <li className="sidenav__genre-item"><Link to="/genre/16">Turn-based strategy (TBS)</Link></li>
                     </ul>
                     <div className="sidenav__line"></div>
                 </div>

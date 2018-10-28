@@ -17,7 +17,7 @@ export default class DetailPage extends React.Component {
     }
 
     componentDidMount() {
-        axios(`${proxy}https://api-endpoint.igdb.com/games/${this.state.id}?fields=id,name,cover,genres,rating,summary,videos,popularity,external`, {
+        axios(`${proxy}https://api-endpoint.igdb.com/games/${this.state.id}?fields=id,name,cover,genres,rating,summary,videos,popularity,external&filter[cover][exists]=1`, {
             method: "GET",
             headers: {
                 "user-key": `${key}`, // user key from config file

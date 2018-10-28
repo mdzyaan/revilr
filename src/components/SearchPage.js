@@ -2,13 +2,14 @@ import React from 'react';
 import axios from 'axios';
 import Card from './Card';
 import { proxy, key } from '../config';
+import CardList from './CardList';
 
 export default class SearchPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             term: '',
-            gameList: [<h1>loading...</h1>, ],
+            gameList: [<div className="search__container"><h1>loading...</h1></div>, ],
         }
     }
     onChange = (e) => {
@@ -28,22 +29,8 @@ export default class SearchPage extends React.Component {
                 }
             })
             .then(response => {
-                if (response.data.length === 0) {
-                    return (
-                        <div className=" cards">
-                            <h1>No results found</h1>
-                        </div>
-                    );
-                }
-                console.log(response.data)
-                const gameList = response.data.map(game => {
-                    if (game.hasOwnProperty('cover') ) { 
-                        return (
-                            <Card key={game.id} game={game}/>
-                        )
-                    } 
-                })
-                this.setState(() => ({gameList}));
+                this.setState(() => ({gameList : [<CardList key={response.data[0].id} name={"Search Result"} gameList={response.data} />],}));
+                
             })        
         } catch (error) {
             alert(error)
@@ -53,7 +40,7 @@ export default class SearchPage extends React.Component {
         e.preventDefault();
         this.setState(() => ({ gameList: []}))
         try {
-            axios(`${proxy}https://api-endpoint.igdb.com/games/?search=${this.state.term}&fields=id,name,cover,genres,rating,summary,videos,popularity&order=popularity:desc&min&limit=50`, {
+            axios(`${proxy}https://api-endpoint.igdb.com/games/?search=${this.state.term}&fields=id,name,cover,genres,rating,summary,videos,popularity&order=popularity:desc&min&limit=50&filter[cover][exists]=1`, {
                 method: "GET",
                 headers: {
                     "user-key": `${key}`,
@@ -69,14 +56,7 @@ export default class SearchPage extends React.Component {
                     );
                 }
                 console.log(response.data)
-                const gameList = response.data.map(game => {
-                    if (game.hasOwnProperty('cover') ) { 
-                        return (
-                            <Card key={game.id} game={game}/>
-                        )
-                    } 
-                })
-                this.setState(() => ({gameList}));
+                this.setState(() => ({gameList : [<CardList key={response.data[0].id} name={"Search Result"} gameList={response.data} />],}));
             })        
         } catch (error) {
             alert(error)
@@ -97,9 +77,9 @@ export default class SearchPage extends React.Component {
                         Search
                     </button>
                 </form>
-                <div className="search__container">
+                
                     {this.state.gameList}       
-                </div>
+
             </div>
         );
     }
