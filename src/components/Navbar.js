@@ -14,8 +14,9 @@ export class Navbar extends React.Component {
     render() {
         return (
             <div>
+            
                 <div id="mySidenav" className="sidenav">
-                    <div className="closebtn" onClick={this.closeNav}><i className="far fa-times-circle"></i></div>
+                    <div className="closebtn" onClick={this.closeNav}><i className="fal fa-times-circle"></i></div>
                     <ul className="sidenav__menu">
                         <li className="sidenav__menu-item"><Link to="#1">Recently Watched</Link></li>
                         <li className="sidenav__menu-item"><Link to="#1">Favorites</Link></li>
@@ -55,13 +56,19 @@ export class Navbar extends React.Component {
                     <div className="sidenav__line"></div>
                 </div>
                 <nav className="nav">
-                    <div className="nav__hamburger" onClick={this.openNav}><i className="fas fa-bars"></i></div>
+                
+                    <div className="nav__hamburger" onClick={this.openNav}>
+                        <div className="nav__hamburger-button">
+                            <span className="nav__hamburger-icon">&nbsp;</span>
+                        </div> 
+                    </div>
+                                    
                     <div className="nav__logo">
                         <Link to="/" className="nav__logo-text">Revilr</Link>
                     </div>
                     <div className="nav__search">
                         <Link to="/search">
-                        <i className="nav__search-icon fas fa-search"></i>
+                        <i className="nav__search-icon fal fa-search"></i>
                         </Link>
                     </div>
                 </nav>

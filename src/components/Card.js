@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link, Redirect } from 'react-router-dom';
 
 export default class Card extends React.Component {
     // card needs props game detail as object containing game data 
@@ -9,10 +9,8 @@ export default class Card extends React.Component {
             id: 0
         }
     };
-    changeId() {
-        this.setState(() => ({id: this.props.game.id}))
-    }
 
+    
     render() {
         const imgId = this.props.game.cover.cloudinary_id;
         const img = "https://images.igdb.com/igdb/image/upload/t_cover_big/" + imgId + ".jpg";
@@ -29,12 +27,11 @@ export default class Card extends React.Component {
                     to={{
                         pathname: `/detail/${id}`,
                     }} 
-                    // onClick={this.changeId}
                     className="cards__icon-1">
-                    <i className="cards__icon-11 far fa-play-circle"></i>
+                    <i className="cards__icon-11 fal fa-play-circle"></i>
                 </Link>
                 <button className="cards__icon-2" href="#">
-                    <i className="cards__icon-22 fas fa-plus"></i>
+                    <i className="cards__icon-22 fal fa-plus"></i>
                 </button>
                 {rating}
                 
