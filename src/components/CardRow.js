@@ -20,7 +20,7 @@ export default class CardRow extends React.Component {
                 const gamesDetail = game;
                 this.setState((prevState) => {
                     return {
-                        gameList: prevState.gameList.concat(<Card updateGameId={this.props.updateGameId} addCn={"cardss__post-card"} key={gamesId} game={gamesDetail}/>)
+                        gameList: prevState.gameList.concat(<Card addCn={"cardss__post-card"} key={gamesId} game={gamesDetail}/>)
                     }
                 });
             }
@@ -39,7 +39,7 @@ export default class CardRow extends React.Component {
         //             const gamesDetail = games.data[0];
         //             this.setState((prevState) => {
         //                 return {
-        //                     gameList: prevState.gameList.concat(<Card updateGameId={this.props.updateGameId} addCn={"cardss__post-card"} key={gamesId} game={gamesDetail}/>)
+        //                     gameList: prevState.gameList.concat(<Card  addCn={"cardss__post-card"} key={gamesId} game={gamesDetail}/>)
         //                 }
         //             });
         //         }

@@ -8,7 +8,7 @@ export default class SearchPage extends React.Component {
         super(props);
         this.state = {
             term: '',
-            gameList: [<h1>loading...</h1>],
+            gameList: [<h1>loading...</h1>, ],
         }
     }
     onChange = (e) => {
@@ -16,7 +16,7 @@ export default class SearchPage extends React.Component {
         const term = e.target.value;
         this.setState(() => ({ term }));
     }
-    //${proxy}https://api-endpoint.igdb.com/games/?search=${this.state.term}&fields=id,name,cover,genres,rating,summary,videos,popularity&order=popularity:desc&min&limit=50
+
     componentDidMount() {
         const CURRENT_UNIX_TIME_MS = new Date().getTime();
         try {
@@ -88,7 +88,7 @@ export default class SearchPage extends React.Component {
                 <form className="search__input" onSubmit={this.onSubmit}>
                     <input 
                         className="search__input-form" 
-                        placeholder="search..."
+                        placeholder="Name a game..."
                         onChange={this.onChange} 
                     />
                     <button 

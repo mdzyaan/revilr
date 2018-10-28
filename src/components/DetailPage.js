@@ -7,57 +7,48 @@ import CardRow from './CardRow';
 export default class DetailPage extends React.Component {
     constructor(props) {
         super(props);
-        this.updateGameId = this.updateGameId.bind(this);
         this.state = {
             game: {},
             gameName: '',
             gameList: [],
-            id: this.props.match.params.id,
+            id: props.match.params.id,
             youtubeId: [],  
         }
-        const location = props.location.pathname;
-        const splitid = location.split('/');
-        const id = splitid[splitid.length - 1]
-        
     }
 
-    updateGameId(gamesId) {
-        this.setState(() => ({id: gamesId}));
-    }
     componentDidMount() {
         axios(`${proxy}https://api-endpoint.igdb.com/games/${this.state.id}?fields=id,name,cover,genres,rating,summary,videos,popularity,external`, {
             method: "GET",
             headers: {
-                "user-key": `${key}`,
+                "user-key": `${key}`, // user key from config file
                 "Accept": "application/json"
             }
         })
         .then(game => {
-            
+            // selecting a video from list of video includes the word "trailer"
+            console.log(game)
             const videoTrailerId = game.data[0].videos.find(video => {
                 const id = video.name.toLowerCase().includes("trailer");
                 return  id;
             });
-            
+            // setting up the state with async game data
             this.setState(() => (
                 { 
-                    game,
-                    gameName: game.data[0].name,
-                    // gameList: [<CardRow updateGameId={this.updateGameId}  name={"Recommended Games"} game={game.data[0].games} />],
+                    game,  // whole game data list
+                    gameName: game.data[0].name,  // game name
+                    //gameList: [<CardRow name={"Recommended Games"} game={game.data[0].games} />],  // passing array of game data to CardRow component
                     youtubeId:  [
                         <iframe
                         key={videoTrailerId.video_id}
                         src={`https://www.youtube.com/embed/${videoTrailerId.video_id}?autohide=1&showinfo=0`}  frameBorder="0"   allowFullScreen></iframe>
                         ]
                 }));
-                console.log(this.state);
         }).catch(e => {
             console.log(e);
         })
     }
     
     render() {
-
         return (
             <div>
                 <div className="video">
@@ -66,8 +57,8 @@ export default class DetailPage extends React.Component {
                     </div>
                 </div>
                 <h1>{this.state.gameName}</h1>
-            </div>
-            
+                {this.state.gameList}
+            </div>       
         );
     }
 }
