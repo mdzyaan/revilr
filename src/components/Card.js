@@ -21,8 +21,7 @@ export default class Card extends React.Component {
         return (
             <div className={`${this.props.addCn && this.props.addCn } cards`}>
                 <img src={img}/>
-                <div className="cards__bg"></div>
-                
+                <div className="cards__bg"></div>           
                 <Link 
                     to={{
                         pathname: `/detail/${id}`,
