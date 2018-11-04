@@ -15,9 +15,10 @@ export default class DetailPage extends React.Component {
             youtubeId: [],  
         }
     }
-
+    
+    
     componentDidMount() {
-        axios(`${proxy}https://api-endpoint.igdb.com/games/${this.state.id}?fields=id,name,cover,genres,rating,summary,videos,popularity,external&filter[cover][exists]=1`, {
+        axios(`${proxy}https://api-endpoint.igdb.com/games/${this.state.id}?fields=id,name,cover,genres,rating,summary,videos,popularity,external,games&expand=games&filter[cover][exists]=1`, {
             method: "GET",
             headers: {
                 "user-key": `${key}`, // user key from config file
@@ -36,7 +37,7 @@ export default class DetailPage extends React.Component {
                 { 
                     game,  // whole game data list
                     gameName: game.data[0].name,  // game name
-                    //gameList: [<CardRow name={"Recommended Games"} game={game.data[0].games} />],  // passing array of game data to CardRow component
+                    gameList: [<CardRow key={'adfdfs23'} name={"Recommended Games"} game={game.data[0].games} />],  // passing array of game data to CardRow component
                     youtubeId:  [
                         <iframe
                         key={videoTrailerId.video_id}

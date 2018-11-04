@@ -1,8 +1,9 @@
 import React from 'react';
-import axios from 'axios';
-import { key, proxy } from '../config';
+//import axios from 'axios';
+//import { key, proxy } from '../config';
 import Card from './Card';
 import { Link } from 'react-router-dom';
+import{ gameLists } from '../gameLists';
 export default class CardRow extends React.Component {
     constructor(props) {
         super(props);
@@ -14,17 +15,32 @@ export default class CardRow extends React.Component {
         this.setState(() => ({games: this.props.game}))
         const gameArr = this.props.game;
         console.log(this.props.game)
-        const gameList = gameArr.map(game => {
-            if (game.cover ) {
-                const gamesId = game.id;
-                const gamesDetail = game;
-                this.setState((prevState) => {
-                    return {
-                        gameList: prevState.gameList.concat(<Card addCn={"cardss__post-card"} key={gamesId} game={gamesDetail}/>)
-                    }
-                });
-            }
-        });
+        if (typeof(gameArr) === 'undefined') {
+            const gameList = gameLists.data.map(game => {
+                if (game.cover ) {
+                    const gamesId = game.id;
+                    const gamesDetail = game;
+                    this.setState((prevState) => {
+                        return {
+                            gameList: prevState.gameList.concat(<Card addCn={"cardss__post-card"} key={gamesId} game={gamesDetail}/>)
+                        }
+                    });
+                }
+            });
+        }else {
+            const gameList = gameArr.map(game => {
+                if (game.cover ) {
+                    const gamesId = game.id;
+                    const gamesDetail = game;
+                    this.setState((prevState) => {
+                        return {
+                            gameList: prevState.gameList.concat(<Card addCn={"cardss__post-card"} key={gamesId} game={gamesDetail}/>)
+                        }
+                    });
+                }
+            });
+        }
+        
         // const gameList = gameArr.map(game => {
         //     axios(`${proxy}https://api-endpoint.igdb.com/games/${game}`, {
         //         method: "GET",
@@ -60,7 +76,7 @@ export default class CardRow extends React.Component {
                 <div className="cardss__button button__wrapper">
                     <Link
                     to="/search" className="cardss__button-button button__wrapper-btn">
-                    View All
+                    Search More Games
                     </Link>
                     <div className="cardss__button-line button__wrapper-line"></div>
                 </div>    

@@ -1,5 +1,5 @@
 import React from 'react';
-import {    Link, NavLink } from 'react-router-dom';
+import {  Route,  Link, NavLink } from 'react-router-dom';
     
 
 //             
@@ -72,7 +72,9 @@ export class Navbar extends React.Component {
                         </Link>
                     </div>
                 </nav>
+                
             </div>
+            
         );
     };
     

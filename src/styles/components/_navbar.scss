@@ -68,6 +68,7 @@
         justify-content: center;
         flex-direction: column;
         padding: 1rem 2rem 0.4rem;
+        margin-left: 3rem;
         border-radius: 1rem;
         background: linear-gradient(270deg, #ea5455, #f8d800, #28c76f, #0396ff);
         background-size: 800% 800%;
@@ -91,6 +92,7 @@
         &-icon{
             color: $color-white;
             font-size: 2rem;
+            font-weight: normal;
         }
     }
 }

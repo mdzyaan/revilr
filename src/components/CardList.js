@@ -15,9 +15,16 @@ export default class CardList extends React.Component {
     }
     componentDidMount() {
         const gameList = this.props.gameList.map(game => {
-            return (
-                <Card addCn='' key={game.id} game={game}/>
-            )
+            if (game.game) {
+                return (
+                    <Card addCn='' key={game.game.id} game={game.game}/>
+                )
+            } else {
+                return (
+                    <Card addCn='' key={game.id} game={game}/>
+                ) 
+            }
+            
         })
         this.setState(() => ({gameList}))
     }
