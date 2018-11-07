@@ -1,0 +1,10 @@
+.mod-top-7rem {
+    margin-top: 7rem;
+}
+
+@media screen and (max-height: 450px) {
+    .mod-top-7rem {
+        margin-top: 0;
+    }
+    
+}
