@@ -10,9 +10,7 @@ export default class HomePage extends React.Component {
 
         this.state = {
             id: 0,
-
         }
- 
     }
 
     render() {

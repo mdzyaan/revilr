@@ -31,7 +31,7 @@ export default class GenrePage extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div className="mod-top-7rem">
                 {this.state.gameList}
             </div>
         );

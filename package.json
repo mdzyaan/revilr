@@ -27,6 +27,7 @@
     "node-sass": "^4.9.3",
     "normalize.css": "^8.0.0",
     "react": "16.0.0",
+    "react-burger-menu": "^2.5.4",
     "react-dom": "16.0.1",
     "react-media-player": "^0.7.5",
     "react-router-dom": "4.2.2",

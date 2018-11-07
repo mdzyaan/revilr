@@ -1,7 +1,8 @@
 @import "abstract/variable";
-@import "assets/font/Facon.ttf";
+
 @import "base/base";
 @import "base/animation";
+@import "base/utility";
 
 @import "components/navbar";
 @import "components/cardsRow";
@@ -12,4 +13,3 @@
 @import "components/footer";
 @import "components/video";
 @import "components/404";
-
