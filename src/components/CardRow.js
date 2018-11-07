@@ -14,7 +14,6 @@ export default class CardRow extends React.Component {
     componentDidMount() {
         this.setState(() => ({games: this.props.game}))
         const gameArr = this.props.game;
-        console.log(this.props.game)
         if (typeof(gameArr) === 'undefined') {
             const gameList = gameLists.data.map(game => {
                 if (game.cover ) {

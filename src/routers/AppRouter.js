@@ -8,7 +8,7 @@ import HomePage from '../components/HomePage';
 import NotFoundPage from '../components/NotFoundPage';
 import GenrePage from '../components/GenrePage';
 import ComingSoonPage from '../components/ComingSoonPage';
-
+import RecentlyWatched from '../components/RecentlyWatched'
 
 const AppRouter = () => (
     <BrowserRouter>
@@ -20,6 +20,7 @@ const AppRouter = () => (
                 <Route path="/detail/:id" component={DetailPage} exact={false} />
                 <Route path="/genre/:id" component={GenrePage} />
                 <Route path="/comingsoon/" component={ComingSoonPage} />
+                <Route path="/recent/" component={RecentlyWatched} />
                 <Route component={NotFoundPage}/>
             </Switch>
             <Footer />

@@ -51,7 +51,7 @@
         padding: 1rem;
         transition: all .3s;
         background-color:transparent;
-        &:hover, &:active {
+        &:hover, &:focus {
             outline: none;
             transform: rotate(360deg);
         }

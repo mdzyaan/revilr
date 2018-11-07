@@ -23,7 +23,7 @@ export class Navbar extends React.Component {
                         <Link to="/">Home</Link>
                     </li>
                     <li>
-                        <Link to="#">Recently Watched</Link>
+                        <Link to="/recent">Recently Watched</Link>
                     </li>
                     <li>
                         <Link to="#">Favorite</Link>
