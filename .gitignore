@@ -3,5 +3,6 @@
 /public/bundle.js.map
 /public/style.css
 /public/style.css.map
+/src/firebase
 yarn.lock
 yarn-error.log

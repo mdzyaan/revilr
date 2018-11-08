@@ -8,9 +8,9 @@ const RecentlyWatched = (props) => {
             <h1 className="recent__title">Recently Watched</h1>
             <div className="line"></div>
             {(props.history.length < 1) ? (
-                <div class="cardss__post" >
-                    <div class="cardss__post-null">
-                        <div class="cards__post-null-text">All your watched trailer will show up here</div>
+                <div className="cardss__post" >
+                    <div className="cardss__post-null">
+                        <div className="cards__post-null-text">All your watched trailer will show up here</div>
                     </div>
                 </div>
             ) :

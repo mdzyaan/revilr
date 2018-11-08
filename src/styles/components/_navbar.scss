@@ -167,11 +167,10 @@
     &.active {
         display: block;
         opacity: 1;
-        margin: -5rem 0 0;
     }
 }
 
-#dismiss {
+.dismiss {
     position: absolute;
     top: 50%;
     right: 10px;
@@ -218,5 +217,12 @@ a[data-toggle="collapse"] {
     }
     .list-unstyled {
         font-size: 2rem;
+    }
+
+    .dismiss {
+        padding: 0.8rem 1rem;
+        &__icon {
+            font-size: 2rem;
+        }
     }
 }

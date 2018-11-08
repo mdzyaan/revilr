@@ -10,13 +10,7 @@ import './styles/main.scss';
 import "./styles/assets/img/pubgCover.png";
 import "./styles/assets/font/Facon.ttf";
 
-
-
- const store = configureStore();
-
-
-const state = store.getState().history;
-console.log(state);
+const store = configureStore();
 
 const index = (
     <Provider store={store}>

@@ -12,7 +12,7 @@ export default class DetailPage extends React.Component {
             gameName: '',
             gameList: [],
             id: props.match.params.id,
-            youtubeId: [],  
+            youtubeId: [<div key="xyz1" className="loader"><h1><i className="loader__icon far fa-redo-alt"></i></h1></div>,],  
         }
     }
     

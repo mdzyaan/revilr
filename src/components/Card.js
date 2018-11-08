@@ -8,9 +8,10 @@ class Card extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            id: 0,
+            id: this.props.game.id,
             imgId:  '',
             rating: this.props.game.rating ? this.props.game.rating : '',
+            cover: this.props.game.cover
         }
     };
     componentDidMount() {

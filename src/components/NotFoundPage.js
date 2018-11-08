@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const NotFoundPage = () => (
-  <div>
+  <div className="mod-top-7rem">
     <div className="box">
       <div className="box__ghost">
       <div className="symbol"></div>
@@ -29,10 +29,10 @@ const NotFoundPage = () => (
       </div>
       
       <div className="box__description">
-      <div className="box__description-container">
-          <div className="box__description-title">Whoops!</div>
-          <div className="box__description-text">It seems like we couldn't find the page you were looking for</div>
-      </div>
+        <div className="box__description-container">
+            <div className="box__description-title">Whoops!</div>
+            <div className="box__description-text">It seems like we couldn't find the page you were looking for</div>
+        </div>
       
         <Link to="/" className="box__button">Go Home</Link>
       

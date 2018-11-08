@@ -1,22 +1,17 @@
-@import url(https://fonts.googleapis.com/css?family=Ubuntu);
-//variables
-
-$pink: #FF5E65;
 
 
 
 .box {
   font-family: 'Lato', sans-serif;
-  width: 350px;
-  max-height: 600px;
-  min-height: 450px;
-  background: #242424;
-  border-radius: 20px;
+  width: 35rem;
+  max-height: 60rem;
+  min-height: 45rem;
+  border-radius: 2rem;
   position: relative;
   margin: 8rem auto 3rem;
   
   &__ghost {
-    padding: 15px 25px 25px;
+    padding: 1.5rem 2.5rem 2.5rem;
     position: absolute;
     left: 50%;
     top: 20%;
@@ -29,12 +24,12 @@ $pink: #FF5E65;
         
         &:before, &:after {
           content: '';
-          width: 12px;
-          height: 4px;
+          width: 1.2rem;
+          height: 0.4rem;
           background: $color-white;
           position: absolute;
-          border-radius: 5px;
-          bottom: 65px;
+          border-radius: 0.5rem;
+          bottom: 6.5rem;
           left: 0;
         }
         &:before {
@@ -46,10 +41,10 @@ $pink: #FF5E65;
       }
       &:nth-child(2) {
         position: absolute;
-        left: -5px;
-        top: 30px;
-        height: 18px;
-        width: 18px;
+        left: -0.5rem;
+        top: 3rem;
+        height: 1.8rem;
+        width: 1.8rem;
         border: 4px solid;
         border-radius: 50%;
         border-color: $color-white;
@@ -62,13 +57,13 @@ $pink: #FF5E65;
         
         &:before, &:after {
           content: '';
-          width: 12px;
-          height: 4px;
+          width: 1.2rem;
+          height: 0.4rem;
           background: $color-white;
           position: absolute;
-          border-radius: 5px;
-          top: 5px;
-          left: 40px;
+          border-radius: 0.5rem;
+          top: 0.5rem;
+          left: 4rem;
         }
         &:before {
           transform: rotate(90deg);
@@ -83,13 +78,13 @@ $pink: #FF5E65;
         
         &:before, &:after {
           content: '';
-          width: 15px;
-          height: 4px;
+          width: 1.5rem;
+          height: .0.4rem;
           background: $color-white;
           position: absolute;
-          border-radius: 5px;
-          top: 10px;
-          right: 30px;
+          border-radius: 0.5rem;
+          top: 1rem;
+          right: 3rem;
         }
         &:before {
           transform: rotate(45deg);
@@ -100,10 +95,10 @@ $pink: #FF5E65;
       }
       &:nth-child(5) {
         position: absolute;
-        right: 5px;
-        top: 40px;
-        height: 12px;
-        width: 12px;
+        right: 0.5rem;
+        top: 4rem;
+        height: 1.2rem;
+        width: 1.2rem;
         border: 3px solid;
         border-radius: 50%;
         border-color: $color-white;
@@ -116,13 +111,13 @@ $pink: #FF5E65;
         
         &:before, &:after {
           content: '';
-          width: 15px;
-          height: 4px;
+          width: 1.5rem;
+          height: 0.4rem;
           background: $color-white;
           position: absolute;
-          border-radius: 5px;
-          bottom: 65px;
-          right: -5px;
+          border-radius: 0.5rem;
+          bottom: 6.5rem;
+          right: -0.5rem;
         }
         &:before {
           transform: rotate(90deg);
@@ -135,9 +130,9 @@ $pink: #FF5E65;
 
     .box__ghost-container {
       background: $color-white;
-      width: 100px;
-      height: 100px;
-      border-radius: 100px 100px 0 0;
+      width: 10rem;
+      height: 10rem;
+      border-radius: 10rem 10rem 0 0;
       position: relative;
       margin: 0 auto;
       animation: upndown 3s ease-in-out infinite;
@@ -147,24 +142,24 @@ $pink: #FF5E65;
         left: 0%;
         top: 45%;
         //transform: translate(-50%, -45%); 
-        height: 12px;
-        width: 70px;
+        height: 1.2rem;
+        width: 7rem;
         
         .box__eye-left {
-          width: 12px;
-          height: 12px;
+          width: 1.2rem;
+          height: 1.2rem;
           background: $color-grey-dark-3;
           border-radius: 50%;
-          margin: 0 10px;
+          margin: 0 1rem;
           position: absolute;
           left: 0;
         }
         .box__eye-right {
-          width: 12px;
-          height: 12px;
+          width: 1.2rem;
+          height: 1.2rem;
           background: $color-grey-dark-3;
           border-radius: 50%;   
-          margin: 0 10px;
+          margin: 0 1rem;
           position: absolute;
           right: 0;
         }
@@ -180,15 +175,15 @@ $pink: #FF5E65;
         div {
           flex-grow:1;
           position: relative;
-          top:-10px;
-          height:20px;
+          top:-1rem;
+          height:2rem;
           border-radius:100%;
           background-color: $color-white;
 
           &:nth-child(2n) {
-            top: -12px;
+            top: -1.2rem;
             margin: 0 -0px;
-            border-top: 15px solid $color-grey-dark-3;
+            border-top: 1.5rem solid $color-grey-dark-3;
             background: transparent;
           }
         }
@@ -196,8 +191,8 @@ $pink: #FF5E65;
     }
       
     .box__ghost-shadow {
-      height: 20px;
-      box-shadow: 0 50px 15px 5px $color-grey-dark-4;
+      height: 2rem;
+      box-shadow: 0 5rem 1.5rem 0.5rem $color-grey-dark-4;
       border-radius: 50%;
       margin: 0 auto;
       animation: smallnbig 3s ease-in-out infinite;
@@ -206,26 +201,26 @@ $pink: #FF5E65;
   
   .box__description {
     position: absolute;
-    bottom: 30px;
+    bottom: 3rem;
     left: 50%;
     transform: translateX(-50%);
     
     .box__description-container {
       color: $color-white;
       text-align: center;
-      width: 200px;
-      font-size: 16px;
+      width: 20rem;
+      font-size: 1.6rem;
       margin: 0 auto;
     
       .box__description-title {
-        font-size: 24px;
-        letter-spacing: .5px;
+        font-size: 2.4rem;
+        letter-spacing: .0.5rem;
       }
 
       .box__description-text {
         color: $color-grey-dark-2;
-        line-height: 20px;
-        margin-top: 20px;
+        line-height: 2rem;
+        margin-top: 2rem;
       }
     }
     
@@ -233,42 +228,43 @@ $pink: #FF5E65;
       font-weight: bolder;
       display: block;
       position: relative;
-      background: linear-gradient(270deg, #ea5455, #f8d800, #28c76f, #0396ff);
-      background-size: 800% 800%;
-      animation: colorChange 30s linear infinite;
-      border: 1px solid transparent;
-      border-radius: 5px;
-      height: 50px;
+      background: transparent;
+      border: 1px solid $color-white;
+      border-radius: 0.5rem;
+      height: 5rem;
       text-align: center;
       text-decoration: none;
       color: $color-white;
-      line-height: 50px;
-      font-size: 18px;
-      padding: 0 70px;
+      line-height: 5rem;
+      font-size: 1.8rem;
+      padding: 0 7rem;
       white-space: nowrap;
-      margin-top: 25px;
+      margin-top: 2.5rem;
       transition: background .5s ease;
       overflow: hidden;
       
       &:before {
         content: '';
         position: absolute;
-        width: 20px;
-        height: 100px;
+        width: 2rem;
+        height: 10rem;
         background: $color-white;
-        bottom: -25px;
+        bottom: -20.5rem;
         left: 0;
         border: 2px solid $color-white;
-        transform: translateX(-50px) rotate(45deg);
+        transform: translateX(-5rem) rotate(45deg);
         transition: transform .5s ease;
       }
       
       &:hover {
-        background: transparent;
-        border-color: $color-white;
+        background: linear-gradient(270deg, #ea5455, #f8d800, #28c76f, #0396ff);
+        background-size: 800% 800%;
+        animation: colorChange 30s linear infinite;
+        border: none;
+        
         
         &:before {
-          transform: translateX(250px) rotate(45deg);
+          transform: translateX(25rem) rotate(45deg);
         }
       }
     }
@@ -277,14 +273,14 @@ $pink: #FF5E65;
 
 //keyframes
 @keyframes upndown {
-  0% {transform: translateY(5px);}
-  50% {transform: translateY(15px);}
-  100% {transform: translateY(5px);}
+  0% {transform: translateY(0.5rem);}
+  50% {transform: translateY(1.5rem);}
+  100% {transform: translateY(0.5rem);}
 }
 @keyframes smallnbig {
-  0% {width: 90px;}
-  50% {width: 100px;}
-  100% {width: 90px;}
+  0% {width: 9rem;}
+  50% {width: 10rem;}
+  100% {width: 9rem;}
 }
 @keyframes shine {
   0% {opacity: .2;}
@@ -294,7 +290,7 @@ $pink: #FF5E65;
 }
 
 
-@media screen and (max-height: 450px) {
+@media screen and (max-height: 45rem) {
   .box {
     margin: 0 auto;
   }

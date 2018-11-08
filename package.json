@@ -25,6 +25,7 @@
     "express": "^4.16.4",
     "extract-text-webpack-plugin": "3.0.0",
     "file-loader": "^2.0.0",
+    "firebase": "^5.5.7",
     "node-sass": "^4.9.3",
     "normalize.css": "^8.0.0",
     "react": "16.0.0",

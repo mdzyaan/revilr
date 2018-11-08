@@ -9,13 +9,17 @@ export default class SearchPage extends React.Component {
         super(props);
         this.state = {
             term: '',
-            gameList: [<div className="search__container"><h1>loading...</h1></div>, ],
+            gameList: [<div key="xyz1" className="loader"><h1><i className="loader__icon far fa-redo-alt"></i></h1></div>,],
         }
     }
     onChange = (e) => {
         e.preventDefault();
         const term = e.target.value;
-        this.setState(() => ({ term }));
+        this.setState(() => ({ 
+            term,
+            
+        }));
+        
     }
 
     componentDidMount() {
@@ -38,7 +42,7 @@ export default class SearchPage extends React.Component {
     }
     onSubmit =  (e)  => {
         e.preventDefault();
-        this.setState(() => ({ gameList: []}))
+        this.setState(() => ({ gameList: [<div key="xyz1" className="loader"><h1><i className="loader__icon far fa-redo-alt"></i></h1></div>,]}))
         try {
             axios(`${proxy}https://api-endpoint.igdb.com/games/?search=${this.state.term}&fields=id,name,cover,genres,rating,summary,videos,popularity&order=popularity:desc&min&limit=50&filter[cover][exists]=1`, {
                 method: "GET",
