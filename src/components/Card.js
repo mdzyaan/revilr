@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import {addGame} from '../actions/history';
+import {startAddGame} from '../actions/history';
 
 class Card extends React.Component {
     // card needs props game detail as object containing game data 
@@ -26,7 +26,7 @@ class Card extends React.Component {
         }))
     }
     saveToRecent = () => {
-        this.props.dispatch(addGame({...this.state}));
+        this.props.startAddGame({...this.state});
     }
     render() {
         
@@ -40,24 +40,19 @@ class Card extends React.Component {
                 <img src={img}/>
                 <div className="cards__bg"></div>           
                 <Link 
-                    to={{
-                        pathname: `/detail/${id}`,
-                    }} 
+                    to={`/detail/${id}`}                    
                     onClick={this.saveToRecent}
                     className="cards__icon-1">
                     <i className="cards__icon-11 fal fa-play-circle"></i>
                 </Link>
                 {rating}
-                
             </div>
         );
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        history: state.history,
-    }
-}
+const mapDispatchToProps = (dispatch) => ({
+    startAddGame: (game) => dispatch(startAddGame(game))
+})
 
-export default connect(mapStateToProps)(Card);
+export default connect(undefined,mapDispatchToProps)(Card);

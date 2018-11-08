@@ -27,7 +27,6 @@ export default class DetailPage extends React.Component {
         })
         .then(game => {
             // selecting a video from list of video includes the word "trailer"
-            console.log(game)
             const videoTrailerId = game.data[0].videos.find(video => {
                 const id = video.name.toLowerCase().includes("trailer");
                 return  id;

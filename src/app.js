@@ -10,6 +10,8 @@ import './styles/main.scss';
 import "./styles/assets/img/pubgCover.png";
 import "./styles/assets/font/Facon.ttf";
 
+import './firebase/firebase';
+
 const store = configureStore();
 
 const index = (
