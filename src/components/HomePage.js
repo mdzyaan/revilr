@@ -6,7 +6,6 @@ import {connect } from 'react-redux';
 
 const HomePage = (props) => {
     
-    console.log(props.history)
     return (
         <div>
             <Header />

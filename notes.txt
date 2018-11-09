@@ -69,32 +69,3 @@ module.exports = {
             "build-babel": "babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch"
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-,{
-            test:/\.(png|svg|jp(e*)g|gif)$/,
-            exclude:/node_modules/,
-            use:[{
-                loader: "url-loader",
-                options: {
-                    name:'[name].[ext]',
-                    outputPath:'./public/images'
-                }
-            }]
-        }

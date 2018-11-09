@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';  
 import AppRouter from './routers/AppRouter';
 import configureStore from './store/configureStore';
-import {addGame} from './actions/history';
+import {startSetGames} from './actions/history';
 // import styles and assets
 import 'normalize.css/normalize.css';
 import './styles/main.scss';
@@ -20,3 +20,8 @@ const index = (
     </Provider>
 )
 ReactDOM.render(index, document.getElementById('app'));
+
+
+store.dispatch(startSetGames()).then(() => {
+    ReactDOM.render(index, document.getElementById('app'));
+})

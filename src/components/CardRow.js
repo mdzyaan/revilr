@@ -1,6 +1,5 @@
 import React from 'react';
-//import axios from 'axios';
-//import { key, proxy } from '../config';
+import uuid from 'uuid';
 import Card from './Card';
 import { Link } from 'react-router-dom';
 import{ gameLists } from '../gameLists';
@@ -12,16 +11,17 @@ export default class CardRow extends React.Component {
         }
     }
     componentDidMount() {
+        
         this.setState(() => ({games: this.props.game}))
         const gameArr = this.props.game;
         if (typeof(gameArr) === 'undefined') {
             const gameList = gameLists.data.map(game => {
                 if (game.cover ) {
-                    const gamesId = game.id;
+                    const key = uuid();
                     const gamesDetail = game;
                     this.setState((prevState) => {
                         return {
-                            gameList: prevState.gameList.concat(<Card addCn={"cardss__post-card"} key={gamesId} game={gamesDetail}/>)
+                            gameList: prevState.gameList.concat(<Card addCn={"cardss__post-card"} key={key} game={gamesDetail}/>)
                         }
                     });
                 }
@@ -29,11 +29,11 @@ export default class CardRow extends React.Component {
         }else {
             const gameList = gameArr.map(game => {
                 if (game.cover ) {
-                    const gamesId = game.id;
+                    const key = uuid();
                     const gamesDetail = game;
                     this.setState((prevState) => {
                         return {
-                            gameList: prevState.gameList.concat(<Card addCn={"cardss__post-card"} key={gamesId} game={gamesDetail}/>)
+                            gameList: prevState.gameList.concat(<Card addCn={"cardss__post-card"} key={key} game={gamesDetail}/>)
                         }
                     });
                 }

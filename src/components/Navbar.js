@@ -19,7 +19,7 @@ export class Navbar extends React.Component {
                     <ul className="list-unstyled components">
                         
                         <li >
-                            <Link to="/">Home</Link>
+                            <Link to="/home">Home</Link>
                         </li>
                         <li>
                             <Link to="/recent">Recently Watched</Link>
@@ -65,7 +65,7 @@ export class Navbar extends React.Component {
                         </div> 
                     </div>
                     <div className="nav__logo">
-                        <Link to="/" className="nav__logo-text">Revilr</Link>
+                        <Link to="/home" className="nav__logo-text">Revilr</Link>
                     </div>
                     <div className="nav__search">
                         <Link to="/search">

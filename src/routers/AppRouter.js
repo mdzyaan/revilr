@@ -9,13 +9,14 @@ import NotFoundPage from '../components/NotFoundPage';
 import GenrePage from '../components/GenrePage';
 import ComingSoonPage from '../components/ComingSoonPage';
 import RecentlyWatched from '../components/RecentlyWatched'
-
+import LoginPage from '../components/LoginPage';
 const AppRouter = () => (
     <BrowserRouter>
         <div>
             <Navbar />
             <Switch>
-                <Route path="/" component={HomePage} exact={true} />
+                <Route path="/" component={LoginPage} exact={true} />
+                <Route path="/home" component={HomePage} exact={true} />
                 <Route path="/search" component={SearchPage} />
                 <Route path="/detail/:id" component={DetailPage} exact={false} />
                 <Route path="/genre/:id" component={GenrePage} />
