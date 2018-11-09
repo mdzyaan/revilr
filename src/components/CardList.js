@@ -3,7 +3,7 @@ import axios from 'axios';
 import { key, proxy } from '../config';
 import Card from './Card';
 import { Link } from 'react-router-dom';
-
+import uuid from 'uuid';
 
 
 export default class CardList extends React.Component {
@@ -17,11 +17,11 @@ export default class CardList extends React.Component {
         const gameList = this.props.gameList.map(game => {
             if (game.game) {
                 return (
-                    <Card addCn='' key={game.game.id} game={game.game}/>
+                    <Card addCn='' key={uuid()} game={game.game}/>
                 )
             } else {
                 return (
-                    <Card addCn='' key={game.id} game={game}/>
+                    <Card addCn='' key={uuid()} game={game}/>
                 ) 
             }
             

@@ -1,7 +1,6 @@
 import React from 'react';
-import { BrowserRouter , Route, Switch } from 'react-router-dom';
-import Footer from '../components/Footer';
-import Navbar from '../components/Navbar';
+import { Router , Route, Switch } from 'react-router-dom';
+import createHistory from 'history/createBrowserHistory';
 import SearchPage from '../components/SearchPage';
 import DetailPage from '../components/DetailPage';
 import HomePage from '../components/HomePage';
@@ -10,23 +9,24 @@ import GenrePage from '../components/GenrePage';
 import ComingSoonPage from '../components/ComingSoonPage';
 import RecentlyWatched from '../components/RecentlyWatched'
 import LoginPage from '../components/LoginPage';
+import PrivateRoute from './PrivateRoute';
+export const history = createHistory();
+
 const AppRouter = () => (
-    <BrowserRouter>
-        <div>
-            <Navbar />
+    <Router history={history}>
+        <div>  
             <Switch>
                 <Route path="/" component={LoginPage} exact={true} />
-                <Route path="/home" component={HomePage} exact={true} />
-                <Route path="/search" component={SearchPage} />
-                <Route path="/detail/:id" component={DetailPage} exact={false} />
-                <Route path="/genre/:id" component={GenrePage} />
-                <Route path="/comingsoon/" component={ComingSoonPage} />
-                <Route path="/recent/" component={RecentlyWatched} />
+                <PrivateRoute path="/home" component={HomePage} exact={true} />
+                <PrivateRoute path="/search" component={SearchPage} />
+                <PrivateRoute path="/detail/:id" component={DetailPage} exact={false} />
+                <PrivateRoute path="/genre/:id" component={GenrePage} />
+                <PrivateRoute path="/comingsoon/" component={ComingSoonPage} />
+                <PrivateRoute path="/recent/" component={RecentlyWatched} />
                 <Route component={NotFoundPage}/>
             </Switch>
-            <Footer />
         </div>
-    </BrowserRouter>
+    </Router>
 );
 
 export default AppRouter; 

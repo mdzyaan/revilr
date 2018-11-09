@@ -1,9 +1,37 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import {connect } from 'react-redux';
+import { startLogout } from '../actions/auth';
 
 export class Navbar extends React.Component {
-    
+    constructor(props) {
+        super(props);
+    }
+    componentDidMount() {
+      $(document).ready(function () {
+        AOS.init();
+        $("#sidebar").mCustomScrollbar({
+          theme: "minimal"
+        });
+
+        $('#dismiss, .overlay').on('click', function () {
+          // hide sidebar
+          $('#sidebar').removeClass('active');
+          // hide overlay
+          $('.overlay').removeClass('active');
+        });
+
+        $('#sidebarCollapse').on('click', function () {
+          // open sidebar
+          $('#sidebar').addClass('active');
+          // fade in the overlay
+          $('.overlay').addClass('active');
+          $('.collapse.in').toggleClass('in');
+          $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+        });
+      });
+
+    }
     render() {
         return (
             <div>
@@ -53,10 +81,10 @@ export class Navbar extends React.Component {
                             </ul>
                         </li>
                     </ul>
-                    <a href="#" className="btn__box">Logout</a>
+                    <button href="#" className="btn__box" onClick={this.props.startLogout}>Logout</button>
                     <div className="line"></div>
                 </div>
-
+    
                 
                 <nav className="nav">
                     <div type="button" id="sidebarCollapse" className="nav__hamburger">
@@ -75,9 +103,15 @@ export class Navbar extends React.Component {
                 </nav>
                 <div className="overlay"></div>
             </div>
-
-        );
-    };
     
-}
-export default Navbar;
+        );
+    }
+    
+};
+    
+
+
+const mapDispatchToProps = (dispatch) => ({
+    startLogout: () => dispatch(startLogout())
+})
+export default connect(undefined,mapDispatchToProps)(Navbar);
