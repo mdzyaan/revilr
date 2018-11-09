@@ -10,20 +10,21 @@ import ComingSoonPage from '../components/ComingSoonPage';
 import RecentlyWatched from '../components/RecentlyWatched'
 import LoginPage from '../components/LoginPage';
 import PrivateRoute from './PrivateRoute';
+import PublicRoute from './PublicRoute';
 export const history = createHistory();
-
+PublicRoute
 const AppRouter = () => (
     <Router history={history}>
         <div>  
             <Switch>
-                <Route path="/" component={LoginPage} exact={true} />
+                <PublicRoute path="/" component={LoginPage} exact={true} />
                 <PrivateRoute path="/home" component={HomePage} exact={true} />
                 <PrivateRoute path="/search" component={SearchPage} />
                 <PrivateRoute path="/detail/:id" component={DetailPage} exact={false} />
                 <PrivateRoute path="/genre/:id" component={GenrePage} />
                 <PrivateRoute path="/comingsoon/" component={ComingSoonPage} />
                 <PrivateRoute path="/recent/" component={RecentlyWatched} />
-                <Route component={NotFoundPage}/>
+                <PublicRoute component={NotFoundPage}/>
             </Switch>
         </div>
     </Router>

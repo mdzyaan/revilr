@@ -8,7 +8,8 @@ export const addGame = (game) => ({
 })
 // START ADD GAME
 export const startAddGame = (gameData = {}) => {
-    return (dispatch) => {
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid;
         const  {
             id, 
             imgId,
@@ -16,7 +17,7 @@ export const startAddGame = (gameData = {}) => {
              cover = '',
         } = gameData;
         const game =  {id, imgId, rating, cover};
-        return database.ref('history').push(game).then(() => {
+        return database.ref(`users/${uid}/history`).push(game).then(() => {
             dispatch(addGame({
                 ...game,
             }))
@@ -31,8 +32,9 @@ export const setGames = (games) => ({
 })
 
 export const startSetGames = () => {
-    return (dispatch) => {
-        database.ref('history').once('value').then((snapshot) => {
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid;
+        database.ref(`users/${uid}/history`).once('value').then((snapshot) => {
             const games = [];
 
             snapshot.forEach((childSnapshot) => {

@@ -37,12 +37,10 @@ firebase.auth().onAuthStateChanged((user) => {
         store.dispatch(startSetGames());
         renderApp();
         history.push('/home')
-        console.log('logged in')
     } else {
         store.dispatch(logout());
         renderApp();
         history.push('/');
-        console.log('logged out')
     }
 })
 
