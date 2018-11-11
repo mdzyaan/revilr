@@ -9,6 +9,8 @@ export default (state = historyState ,action) => {
                 ...state,
                 action.game
             ];
+        case 'SET_GAME':
+            return action.games;
         default:
             return state;
     }

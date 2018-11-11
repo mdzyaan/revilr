@@ -59,7 +59,6 @@ export default class SearchPage extends React.Component {
                         </div>
                     );
                 }
-                console.log(response.data)
                 this.setState(() => ({gameList : [<CardList key={response.data[0].id} name={"Search Result"} gameList={response.data} />],}));
             })        
         } catch (error) {

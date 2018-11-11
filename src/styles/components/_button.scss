@@ -68,10 +68,9 @@
     }
       
 	&:hover {
-	background: linear-gradient(270deg, #ea5455, #f8d800, #28c76f, #0396ff);
 	background-size: 800% 800%;
 	animation: colorChange 30s linear infinite;
-	border: none;
+	border: 1px solid $color-white;
 		&:before {
 			transform: translateX(1800%) rotate(45deg);
 		}

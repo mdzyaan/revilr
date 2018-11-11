@@ -1,5 +1,7 @@
 import {createStore, combineReducers, applyMiddleware, compose } from 'redux';
-import historyReducer from '../reducers/history';
+import historyReducers from '../reducers/historyReducers';
+import authReducers from '../reducers/authReducers';
+import mostViewedReducers from '../reducers/mostViewedReducers';
 import thunk from 'redux-thunk';
 
 const composeEnhansers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -7,7 +9,9 @@ const composeEnhansers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 export default () => {
     const store = createStore(
         combineReducers({
-            history: historyReducer
+            history: historyReducers,
+            auth: authReducers,
+            mostViewed: mostViewedReducers
         }),
         composeEnhansers(applyMiddleware(thunk))
     );

@@ -2,7 +2,6 @@ import React from 'react';
 import {connect } from 'react-redux';
 import CardList from './CardList';
 const RecentlyWatched = (props) => {
-    console.log(props)
     return ( 
         <div className="mod-top-7rem">
             <h1 className="recent__title">Recently Watched</h1>
