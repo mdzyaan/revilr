@@ -2,7 +2,7 @@ import React from 'react';
 import {Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import {startAddGame} from '../actions/history';
-
+import {startAddGameToMostViewed} from '../actions/mostViewed';
 class Card extends React.Component {
     // card needs props game detail as object containing game data 
     constructor(props) {
@@ -10,6 +10,7 @@ class Card extends React.Component {
         this.state = {
             id: this.props.game.id,
             imgId:  '',
+            name: this.props.game.name,
             rating: this.props.game.rating ? this.props.game.rating : '',
             cover: this.props.game.cover
         }
@@ -27,6 +28,7 @@ class Card extends React.Component {
     }
     saveToRecent = () => {
         this.props.startAddGame({...this.state});
+        this.props.startAddGameToMostViewed({...this.state});
     }
     render() {
         
@@ -52,7 +54,8 @@ class Card extends React.Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-    startAddGame: (game) => dispatch(startAddGame(game))
+    startAddGame: (game) => dispatch(startAddGame(game)),
+    startAddGameToMostViewed: (game) => dispatch(startAddGameToMostViewed(game)),
 })
 
 export default connect(undefined,mapDispatchToProps)(Card);

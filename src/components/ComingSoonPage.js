@@ -23,7 +23,6 @@ export default class ComingSoonPage extends React.Component {
                 }
             })
             .then(response => {
-                console.log(response)  
                 this.setState(() => ({gameList : [<CardList key={response.data[0].game.id} name={"Search Result"} gameList={response.data} />],}));      
             })
         

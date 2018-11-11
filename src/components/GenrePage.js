@@ -21,7 +21,6 @@ export default class GenrePage extends React.Component {
                 }
             })
             .then(response => {
-                console.log(response)  
                 this.setState(() => ({gameList : [<CardList key={response.data[0].id} name={"Search Result"} gameList={response.data} />],}));      
             })
         

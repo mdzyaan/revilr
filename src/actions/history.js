@@ -13,10 +13,11 @@ export const startAddGame = (gameData = {}) => {
         const  {
             id, 
             imgId,
-             rating, 
-             cover = '',
+            rating, 
+            name,
+            cover = '',
         } = gameData;
-        const game =  {id, imgId, rating, cover};
+        const game =  {id, imgId, name, rating, cover};
         return database.ref(`users/${uid}/history`).push(game).then(() => {
             dispatch(addGame({
                 ...game,
