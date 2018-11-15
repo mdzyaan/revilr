@@ -39,27 +39,6 @@ export default class CardRow extends React.Component {
                 }
             });
         }
-        
-        // const gameList = gameArr.map(game => {
-        //     axios(`${proxy}https://api-endpoint.igdb.com/games/${game}`, {
-        //         method: "GET",
-        //         headers: {
-        //             "user-key": `${key}`,
-        //             "Accept": "application/json"
-        //         }
-        //     })
-        //     .then(games => {
-        //         if (games.data[0].cover) {
-        //             const gamesId = games.data[0].id;
-        //             const gamesDetail = games.data[0];
-        //             this.setState((prevState) => {
-        //                 return {
-        //                     gameList: prevState.gameList.concat(<Card  addCn={"cardss__post-card"} key={gamesId} game={gamesDetail}/>)
-        //                 }
-        //             });
-        //         }
-        //     });
-        // });
     }
     render() {
         

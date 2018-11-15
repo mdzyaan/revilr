@@ -12,8 +12,11 @@ import 'normalize.css/normalize.css';
 import './styles/main.scss';
 import "./styles/assets/img/pubgCover.png";
 import "./styles/assets/font/Facon.ttf";
-
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 import './firebase/firebase';
+
+
 
 const store = configureStore();
 
@@ -38,7 +41,8 @@ firebase.auth().onAuthStateChanged((user) => {
         store.dispatch(startSetGames());
         store.dispatch(startSetGameMostViewed());
         renderApp();
-        history.push('/home')
+        console.log(history)
+        history.goForward()
     } else {
         store.dispatch(logout());
         renderApp();

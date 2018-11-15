@@ -43,7 +43,7 @@ module.exports = (env) =>  {
                         ]
                     })
                 },{
-                    test: /\.(png|jpg|jpeg)$/,
+                    test: /\.(png|jpg|jpeg|svg|gif)$/,
                     use: [{
                         loader: 'url-loader',
                         options: { 
@@ -52,7 +52,7 @@ module.exports = (env) =>  {
                         } 
                     }]
                 },{
-                    test: /\.(ttf|eot)$/,  
+                    test: /\.(ttf|eot|woff)$/,  
                     use: [{
                         loader: 'url-loader',
                         options: { 

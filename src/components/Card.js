@@ -42,7 +42,7 @@ class Card extends React.Component {
                 <img src={img}/>
                 <div className="cards__bg"></div>           
                 <Link 
-                    to={`/detail/${id}`}                    
+                    to={`/game/${id}`}                    
                     onClick={this.saveToRecent}
                     className="cards__icon-1">
                     <i className="cards__icon-11 fal fa-play-circle"></i>
