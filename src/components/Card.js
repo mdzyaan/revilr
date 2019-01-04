@@ -48,6 +48,9 @@ class Card extends React.Component {
                     <i className="cards__icon-11 fal fa-play-circle"></i>
                 </Link>
                 {rating}
+                <span className="cards__icon-2">
+                    <i className="cards__icon-22 fas fa-plus fa-fw"></i>
+                </span>
             </div>
         );
     }

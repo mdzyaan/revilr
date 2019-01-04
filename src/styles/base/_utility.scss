@@ -14,15 +14,11 @@
     }
 }
 
-
-@keyframes loader {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+.slick-current {
+    border: 1px solid $color-white;
 }
+
+
 @media screen and (max-height: 450px) {
     .mod-top-7rem {
         margin-top: 0;

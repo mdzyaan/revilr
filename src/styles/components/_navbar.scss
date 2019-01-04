@@ -149,6 +149,30 @@
         }
     }
 }
+.sidebar {
+
+    &__profile {
+        display: flex;
+        align-items: center;
+        min-height: 9rem;
+        border-bottom: 1px solid $color-grey-dark-3;
+    }
+    
+
+    &__name {
+        font-size: 2rem;
+        font-weight: bolder;
+    }
+    &__greet {
+        margin: 0;
+    }
+    &__image {
+        height: 8rem;
+        width: 8rem;
+        border-radius: 100%;
+        margin: 1rem;
+    }
+}
 
 .overlay {
     display: none;

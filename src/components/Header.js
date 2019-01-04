@@ -9,7 +9,7 @@ const Header = () => (
                 <div className="header__content-cta button__wrapper">
                 <Link 
                     to={{
-                        pathname: `/detail/27789`,
+                        pathname: `/game/27789`,
                     }} 
                     className="header__content-cta-button button__wrapper-btn">
                     Watch Trailer Now.

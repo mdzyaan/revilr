@@ -13,7 +13,7 @@ module.exports = (env) =>  {
     const isProduction = env === 'production';
     const CSSExtract = new ExtractTextPlugin('style.css');
     return {
-        entry: './src/app.js',
+        entry: './src/apps.js',
         output: {
             path: path.join(__dirname, 'public'),
             filename: 'bundle.js'

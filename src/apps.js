@@ -5,6 +5,7 @@ import AppRouter, {history} from './routers/AppRouter';
 import configureStore from './store/configureStore';
 import {startSetGames} from './actions/history';
 import { login, logout } from './actions/auth';
+import { startAddDetail } from './actions/detail';
 import {startSetGameMostViewed} from './actions/mostViewed';
 import {firebase} from './firebase/firebase';
 // import styles and assets
@@ -38,10 +39,10 @@ const renderApp = () => {
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
         store.dispatch(login(user.uid));
+        store.dispatch(startAddDetail(user.providerData[0]))
         store.dispatch(startSetGames());
         store.dispatch(startSetGameMostViewed());
         renderApp();
-        console.log(history)
         history.goForward()
     } else {
         store.dispatch(logout());

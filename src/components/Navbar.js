@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import {connect } from 'react-redux';
 import { startLogout } from '../actions/auth';
 
-export class Navbar extends React.Component {
+class Navbar extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -44,7 +44,15 @@ export class Navbar extends React.Component {
                             <span href="index.html" className="nav__logo-text">Revilr</span>
                         </div>
                     </div>
+                    <div className="sidebar__profile">
+                        <img className="sidebar__image" src={`${this.props.detail.photoURL}`} />
+                        <div className="sidebar__text">
+                            <p className="sidebar__greet">Welcome,</p>
+                            <h1 className="sidebar__name">{this.props.detail.displayName}</h1>
+                        </div>
+                    </div>
                     <ul className="list-unstyled components">
+                        
                         
                         <li >
                             <Link to="/home">Home</Link>
@@ -109,9 +117,13 @@ export class Navbar extends React.Component {
     
 };
     
-
+const mapStateToProps = (state) => {
+    return {
+        detail: state.detail,
+    }
+}
 
 const mapDispatchToProps = (dispatch) => ({
     startLogout: () => dispatch(startLogout())
 })
-export default connect(undefined,mapDispatchToProps)(Navbar);
+export default connect(mapStateToProps,mapDispatchToProps)(Navbar);
