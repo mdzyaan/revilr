@@ -10,7 +10,7 @@ export default (state = historyState ,action) => {
                 action.game
             ];
         case 'SET_GAME':
-            return action.games;
+            return action.games.reverse();
         default:
             return state;
     }

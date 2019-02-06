@@ -61,7 +61,7 @@ class Navbar extends React.Component {
                             <Link to="/recent">Recently Watched</Link>
                         </li>
                         <li>
-                            <Link to="#">Favorite</Link>
+                            <Link to="/bookmarks">Bookmarks</Link>
                         </li>
                         <li>
                             <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" className="dropdown-toggle">Genre</a>

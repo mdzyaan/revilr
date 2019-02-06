@@ -2,7 +2,8 @@
 	max-width: 80rem;
     margin: 7rem auto 0 auto;
 	width: 100%;
-	position:relative;
+    position:relative;
+    
     &-iframe {
         height:0px;
         width:100%;
@@ -35,4 +36,42 @@
     }
 }
 
+.action {
+    max-width: 30rem;
+    margin: 1rem 0;
+    display: flex;
+    justify-content: space-around;
+    &__button {
+        background-color: transparent;
+        border: none;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 1.5rem;
+        
+        &:focus {
+            outline: none;
+        }
+        &-icon {
+            font-size: 2rem;
+            color: $color-white;
+            opacity: 0.5;
+        }
+        &:hover &-title {
+            opacity: 1;
+        }
+        &:hover &-icon{
+            opacity: 1;
+        }
+        &-title {
+            font-size: 1.6rem;
+            color: white;
+            margin: 1rem;
+            opacity: 0.5;
+        }
+        
+    }
+}
 

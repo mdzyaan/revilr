@@ -5,7 +5,7 @@ const Header = () => (
         <section className="header">
             <div className="header__bg"></div>
             <div className="header__content">
-                <div className="header__content-title">Watch the trailer of most anticipated mobile game of 2018.</div>
+                <div className="header__content-title">Watch the trailer of most anticipated mobile game of the year.</div>
                 <div className="header__content-cta button__wrapper">
                 <Link 
                     to={{

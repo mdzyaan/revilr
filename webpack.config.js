@@ -75,7 +75,7 @@ module.exports = (env) =>  {
                 'process.env.API_KEY': JSON.stringify(process.env.API_KEY),
             })
         ],
-        devtool:isProduction ? 'source-map' : 'cheap-module-eval-source-map',
+        //devtool:isProduction ? 'source-map' : 'cheap-module-eval-source-map',
         devServer: {
             contentBase: path.join(__dirname, 'public'),
             historyApiFallback: true,

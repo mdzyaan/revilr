@@ -11,6 +11,7 @@ import RecentlyWatched from '../components/RecentlyWatched'
 import LoginPage from '../components/LoginPage';
 import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
+import BookmarkPage from '../components/BookmarkPage';
 export const history = createHistory();
 
 const AppRouter = () => (
@@ -24,6 +25,7 @@ const AppRouter = () => (
                 <PrivateRoute path="/genre/:id" component={GenrePage} />
                 <PrivateRoute path="/comingsoon/" component={ComingSoonPage} />
                 <PrivateRoute path="/recent/" component={RecentlyWatched} />
+                <PrivateRoute path="/bookmarks/" component={BookmarkPage} />
                 <PublicRoute component={NotFoundPage}/>
             </Switch>
         </div>

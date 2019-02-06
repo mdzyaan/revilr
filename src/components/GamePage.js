@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import { proxy, key } from '../config';
 import axios from 'axios';
 import CardRow from './CardRow';
-
+import uuid from 'uuid';
 
 export default class GamePage extends React.Component {
     constructor(props) {
@@ -14,7 +14,6 @@ export default class GamePage extends React.Component {
             gameList: [],
             id: props.match.params.id,
             video: [<div key="xyz1" className="loader"><h1><i className="loader__icon far fa-redo-alt"></i></h1></div>,], 
-            youtubeId: [],
             youtubeImg: null,
             summary: '',
         }
@@ -38,15 +37,14 @@ export default class GamePage extends React.Component {
         })
         .then(game => {
             
-            // selecting a video from list of video includes the word "trailer"
-            console.log(game.data[0].summary);
+            // creating list of videoId
             const youtubeId = game.data[0].videos.map(video => {
                 return  video.video_id;
             });
-           
+           // list of video element
             const youtubeImg = youtubeId.map(id => {
               return (
-                <div className="video-div">
+                <div key={uuid()} className="video-div">
                   <img className="video-img" src={`https://i.ytimg.com/vi_webp/${id}/maxresdefault.webp`} />
                   <i className="video-icon fal fa-play-circle"></i>
                 </div>
@@ -59,7 +57,6 @@ export default class GamePage extends React.Component {
                     gameName: game.data[0].name,  // game name
                     //gameList: [<CardRow key={'adfdfs23'} name={"Recommended Games"} game={game.data[0].games} />],  // passing array of game data to CardRow component
                     video:  <iframe src={`https://www.youtube.com/embed/${youtubeId[0]}`} frameBorder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>,
-                    youtubeId,
                     youtubeImg,
                     summary: game.data[0].summary,
                 }));
@@ -102,9 +99,29 @@ export default class GamePage extends React.Component {
                 </Slider>
                 
               </div>
-              <h1>{this.state.gameName}</h1>
-              <p>{this.state.summary}</p>
-              {this.state.gameList}
+              <div className="description">
+                <h1>{this.state.gameName}</h1>
+                <div className="action">
+                    <button className="action__button">
+                        <i className="action__button-icon fal fa-thumbs-up"></i>
+                        <p className="action__button-title">Like</p>
+                    </button>
+                    <button className="action__button">
+                        <i className="action__button-icon fal fa-thumbs-down"></i>
+                        <p className="action__button-title">Dislike</p>
+                    </button>
+                    <button className="action__button">
+                        <i className="action__button-icon fal fa-share"></i>
+                        <p className="action__button-title">Share</p>
+                    </button>
+                    <button className="action__button">
+                        <i className="action__button-icon fal fa-bookmark"></i>
+                        <p className="action__button-title">bookmark</p>
+                    </button>
+                </div>
+                <p>{this.state.summary}</p>
+              </div>
+                {this.state.gameList}
             </div>       
         );
     }

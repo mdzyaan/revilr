@@ -62,32 +62,56 @@
 
 // 6. sum of prime number with RECURSION?
 
-function sumPrime(num) {
-    let total = [];
-    function isPrime(num,i) {
-        if (num <= i) return true
-        if (num%i === 0) return true;
+// function sumPrime(num) {
+//     let total = [];
+//     function isPrime(num,i) {
+//         if (num <= i) return true
+//         if (num%i === 0) return true;
         
-        i++;
-        isPrime(num,i);
+//         i++;
+//         isPrime(num,i);
+//     }
+//     const count = 3;
+//     function collect(i) {
+//         if (i >= num) return true;
+//         if (isPrime(i,2) === true) {
+//             total.push(i);
+//         }  
+//         i+=2
+//         collect(i);
+//     }
+//     collect(count)
+//     const reducer = (accumulator, currentValue) => accumulator + currentValue;
+//     //return (total.length > 0) ? total.reduce(reducer) : "0";
+//     return total;
+// }
+
+// console.log(sumPrime(10));
+
+// 7. UPDATING LETTER TO NEXT LETTER;
+function nextLetter(letter) {
+    const joinedLetter = 'abcdefghijklmnopqrstuvwxyz'
+    const letters = joinedLetter.split('');
+    const index = letters.findIndex(el => el === letter);
+    if (index === 25) {
+        return letters[0]
     }
-    const count = 3;
-    function collect(i) {
-        if (i >= num) return true;
-        if (isPrime(i,2) === true) {
-            total.push(i);
-        }  
-        i+=2
-        collect(i);
-    }
-    collect(count)
-    const reducer = (accumulator, currentValue) => accumulator + currentValue;
-    //return (total.length > 0) ? total.reduce(reducer) : "0";
-    return total;
+    if (index === -1 ) {
+        return ' '
+    }    
+    return letters[index + 1]
 }
 
-console.log(sumPrime(10));
+function updatedWord(word) {
+    const letters = word.toLowerCase().split('');
+    const updatedletter = []
+    for (let letter of letters) {
+        updatedletter.push(nextLetter(letter));
+    }
+    console.log(updatedletter.join(''))
+}
 
+updatedWord('Mohammed Zyaan');
 
 // import {createStore, combineReducers} from 'redux';
 // // ACTIONS

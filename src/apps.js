@@ -7,6 +7,7 @@ import {startSetGames} from './actions/history';
 import { login, logout } from './actions/auth';
 import { startAddDetail } from './actions/detail';
 import {startSetGameMostViewed} from './actions/mostViewed';
+import {startSetBookmarkGames} from './actions/bookmark';
 import {firebase} from './firebase/firebase';
 // import styles and assets
 import 'normalize.css/normalize.css';
@@ -40,8 +41,10 @@ firebase.auth().onAuthStateChanged((user) => {
     if (user) {
         store.dispatch(login(user.uid));
         store.dispatch(startAddDetail(user.providerData[0]))
+        store.dispatch(startSetBookmarkGames())
         store.dispatch(startSetGames());
         store.dispatch(startSetGameMostViewed());
+        
         renderApp();
         history.goForward()
     } else {
